@@ -11,68 +11,104 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.header{
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-.navbar{
+/* navbar css */
+#navbar{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap:26%;
   list-style-type: none;
 }
-.navbar >ul {
+#navbar >ul {
   display: flex;
   list-style-type: none;
 }
-.navbar > ul li a{
+#navbar > ul li a{
   text-decoration: none;
   color: black;
   margin: 0 20px;
 }
-.header{
+
+.closeIcon{
+  display: none;
+}
+#sidebar{
+  display: none;
+}
+#hamburgerMenuIcon{
+  display: none;
+}
+
+/* header css  */
+#header{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap:30%;
   height: 250px;
   background-color: #495e57;
   color: white;
 }
-.header div{
+
+#header div{
   width: 400px;
   padding-bottom: 25px;
 }
-
 
 button{
   color:black;
   padding: 10px;
   border-radius: 10%;
   border: none;
+  cursor: pointer;
   background-color: #f4ce14;
 }
-
-.hamburgerMenuIcon{
-  display: none;
-}
-
 .restaurantFoodImg{
   height: 300px;
   margin-top:30px;
   cursor: pointer;
   border-radius: 10%;
 }
-.closeIcon{
-  display: none;
+
+/* specials css */
+
+#specials{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8%;
+  z-index: 1;
 }
-.sidebar{
-  display: none;
+#specialsHeader{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+
+}
+.special img{
+   width: 300px;
+   height: 200px;
+}
+.special .content{
+  width: 300px;
+  height: 250px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #edefee;
+}
+
+.special .content div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 
 @media (max-width: 420px) {
-  .restaurantFoodImg{
-    display: none;
-  }
-  .hamburgerMenuIcon.active{
+
+   /* navbar responsiveness css */
+  #hamburgerMenuIcon.active{
     display: block;
     cursor: pointer;
   }
@@ -84,24 +120,15 @@ button{
     cursor: pointer;
     color: white !important;
   }
-  .header{
-    height: fit-content;
-    padding-left: 10px;
-  }
-  .header div{
-    width: 100%;
-  }
-  .header{
-    z-index: 1 !important;
-  }
-  .navbar{
+
+  #navbar{
     justify-content: space-between;
     margin: 10px;
   }
-  .navbar > ul{
+  #navbar > ul{
     display: none;
   }
-  .sidebar.active{
+  #sidebar.active{
     display: block;
     background-color: #495e57;
     position: fixed;
@@ -109,26 +136,43 @@ button{
     right: 0;
     bottom:0;
   }
-  .sidebar.active > ul{
+  #sidebar.active > ul{
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding-top: 10px;
     list-style-type: none;
   }
-  .navbar li:hover{
+  #navbar li:hover{
     background-color: #f4ce14;
   }
-  .navbar li{
+  #navbar li{
      background-color: white;
      padding: 20px;
      text-align: center;
      margin: 10px 0px;
   }
 
-  .navbar li a{
+  #navbar li a{
     text-decoration: none;
     color: black;
+  }
+
+  /* header responsiveness css */
+  .restaurantFoodImg{
+    display: none;
+  }
+  #header{
+    height: fit-content;
+    padding-left: 10px;
+  }
+  #header div{
+    width: 100%;
+  }
+
+  /* specials */
+  #specials {
+    flex-direction: column;
   }
 
 }
