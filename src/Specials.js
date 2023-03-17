@@ -33,8 +33,7 @@ const Special = () => {
         <>
         <div id="specialsHeader">
             <h1>This Week Specials!</h1>
-            <button>Online Menu</button>
-        </div>
+         </div>
         <div id="specials">
         {specials.map((special) => (
             <div className="special">

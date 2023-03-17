@@ -81,7 +81,7 @@ button{
 }
 #specialsHeader{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-top: 100px;
 
@@ -102,6 +102,51 @@ button{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+/* testimonials */
+#testimonials{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.testimonialsHeader{
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+}
+.testimony{
+  display: flex;
+  gap:2%;
+  align-items: center;
+
+}
+.testimony img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+#navigator{
+  display: flex;
+  justify-content: center;
+  gap: 1%;
+}
+.circle{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.circle:hover{
+  background-color: #f4ce14;
+  border: 1px solid #f4ce14;
+
+
+}
+.circle.active{
+  background-color: #f4ce14;
+  border: 1px solid #f4ce14;
 }
 
 
