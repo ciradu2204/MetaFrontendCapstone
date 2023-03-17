@@ -11,3 +11,124 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.header{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+}
+.navbar >ul {
+  display: flex;
+  list-style-type: none;
+}
+.navbar > ul li a{
+  text-decoration: none;
+  color: black;
+  margin: 0 20px;
+}
+.header{
+  height: 250px;
+  background-color: #495e57;
+  color: white;
+}
+.header div{
+  width: 400px;
+  padding-bottom: 25px;
+}
+
+
+button{
+  color:black;
+  padding: 10px;
+  border-radius: 10%;
+  border: none;
+  background-color: #f4ce14;
+}
+
+.hamburgerMenuIcon{
+  display: none;
+}
+
+.restaurantFoodImg{
+  height: 300px;
+  margin-top:30px;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.closeIcon{
+  display: none;
+}
+.sidebar{
+  display: none;
+}
+
+
+@media (max-width: 420px) {
+  .restaurantFoodImg{
+    display: none;
+  }
+  .hamburgerMenuIcon.active{
+    display: block;
+    cursor: pointer;
+  }
+  .closeIcon{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 25px;
+    margin: 10px;
+    cursor: pointer;
+    color: white !important;
+  }
+  .header{
+    height: fit-content;
+    padding-left: 10px;
+  }
+  .header div{
+    width: 100%;
+  }
+  .header{
+    z-index: 1 !important;
+  }
+  .navbar{
+    justify-content: space-between;
+    margin: 10px;
+  }
+  .navbar > ul{
+    display: none;
+  }
+  .sidebar.active{
+    display: block;
+    background-color: #495e57;
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom:0;
+  }
+  .sidebar.active > ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 10px;
+    list-style-type: none;
+  }
+  .navbar li:hover{
+    background-color: #f4ce14;
+  }
+  .navbar li{
+     background-color: white;
+     padding: 20px;
+     text-align: center;
+     margin: 10px 0px;
+  }
+
+  .navbar li a{
+    text-decoration: none;
+    color: black;
+  }
+
+}
