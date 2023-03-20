@@ -315,10 +315,14 @@ button a{
    }
   #photos{
     flex-direction: column;
+    align-items: center;
+    gap: 2%;
    }
 
   /* Footer */
   #footer{
     flex-direction: column;
+    align-items: center;
+    gap: 2%;
   }
 }
