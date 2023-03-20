@@ -22,14 +22,6 @@ const Nav = () => {
         path: "about"
       },
       {
-        name: "Specials",
-        path: "specials"
-      },
-      {
-        name: "Testimonials",
-        path: "testimony"
-      },
-      {
         name: "Booking",
         path: "booking"
       }

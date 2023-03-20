@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+
+#root, #app{
+  height: 100%;
 }
 
 code {
@@ -50,6 +55,7 @@ code {
   color: white;
 }
 
+
 #header div{
   width: 400px;
   padding-bottom: 25px;
@@ -62,6 +68,11 @@ button{
   border: none;
   cursor: pointer;
   background-color: #f4ce14;
+}
+button a{
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
 }
 .restaurantFoodImg{
   height: 300px;
@@ -112,7 +123,7 @@ button{
 }
 .testimonialsHeader{
   display: flex;
-  margin-top: 100px;
+  margin-top: 20px;
   justify-content: center;
 }
 .testimony{
@@ -153,6 +164,7 @@ button{
 
  #about{
   display: flex;
+  height: 100% !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -184,6 +196,8 @@ button{
  form{
    display: flex;
    max-width: 400px;
+   position: relative;
+   bottom: 0;
    width: 100%;
    gap: 15%;
    flex-direction: column;
