@@ -13,7 +13,7 @@ test('initializeTimes', () => {
      const input = screen.queryAllByTestId("time");
      setTimeout(() => {
         expect(input).toBeGreaterThan(0);
-     },2000)
+     })
 })
 
 test('updateTimes', () => {
@@ -22,7 +22,7 @@ test('updateTimes', () => {
     fireEvent.change(date, {target: {value: '2020-05-12'}})
     const time = screen.queryAllByTestId("input");
     expect(time).toBeGreaterThan(0);
-   },2000)
+   })
 
 })
 
