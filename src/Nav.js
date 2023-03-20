@@ -39,7 +39,7 @@ const Nav = () => {
             <AiOutlineClose className={`closeIcon`} onClick={closeSideBar}/>
           <ul>
           {links.map((link, index) => (
-            <li key={index}><Link href={link.path}>{link.name}</Link></li>
+            <li key={index}><Link data-testid={link.path} href={link.path}>{link.name}</Link></li>
           ))}
           </ul>
           </div>

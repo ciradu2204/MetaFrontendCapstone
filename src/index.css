@@ -305,6 +305,8 @@ button a{
   /* specials */
   #specials {
     flex-direction: column;
+    align-items: center;
+    gap: 2%;
   }
 
   /* about page */
