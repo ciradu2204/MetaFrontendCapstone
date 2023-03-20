@@ -204,6 +204,10 @@ button{
   cursor: pointer;
  }
 
+ .feedback{
+  color:green;
+ }
+
  /* Footer */
  #footer{
   display: flex;
@@ -214,6 +218,7 @@ button{
   background-color: #f4ce14;
 
  }
+
 
 @media (max-width: 420px) {
 

@@ -39,15 +39,15 @@ const Nav = () => {
           <img alt="logo" src={logo}/>
           <GiHamburgerMenu id={`hamburgerMenuIcon`} className={`${!sidebarOpen? "active":""}`} onClick={openSideBar}/>
           <ul>
-          {links.map((link) => (
-            <li><Link to={link.path}>{link.name}</Link></li>
+          {links.map((link,index) => (
+            <li key={index}><Link data-testid={link.path} to={link.path} >{link.name}</Link></li>
           ))}
           </ul>
           <div id={`sidebar`} className={`${sidebarOpen? "active":""}`}>
             <AiOutlineClose className={`closeIcon`} onClick={closeSideBar}/>
           <ul>
-          {links.map((link) => (
-            <li><Link href={link.path}>{link.name}</Link></li>
+          {links.map((link, index) => (
+            <li key={index}><Link href={link.path}>{link.name}</Link></li>
           ))}
           </ul>
           </div>

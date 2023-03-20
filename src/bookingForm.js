@@ -1,37 +1,24 @@
-import { useFormik } from "formik";
 
-const BookingForm = () => {
-    const formik = useFormik({
-        initialValues: {
-          resDate: '',
-          resTime: '',
-           guests: 1,
-          occasion:"birthday",
-        },
-        onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
-        },
-      });
+
+const BookingForm = ({availableTimes, formSubmited, formik}) => {
   return (
     <div id="formContainer">
         <h1>Reserve Your Table</h1>
+        <p className="feedback">{formSubmited? "Successfully Reserved a table": null}</p>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor="resDate">Choose date</label>
-        <input type="date" id="resDate" onChange={formik.handleChange} value={formik.values.resDate}/>
+        <input type="date" id="resDate" data-testid="date" onChange={formik.handleChange} value={formik.values.resDate}/>
         <label htmlFor="resTime">Choose time</label>
-        <select id="resTime" onChange={formik.handleChange} value={formik.values.resTime}>
-          <option value=""></option>
-          <option value="17:00">17:00</option>
-          <option value="18:00">18:00</option>
-          <option value="19:00">19:00</option>
-          <option value="20:00">20:00</option>
-          <option value="21:00">21:00</option>
-          <option value="22:00">22:00</option>
+        <select id="resTime" onChange={formik.handleChange} value={formik.values.resTime} data-testid="time" >
+          {availableTimes.map((availableTime, index) => (
+          <option key={index} value={availableTime}>{availableTime}</option>
+
+          ))}
         </select>
         <label htmlFor="guests">Number of guests</label>
-        <input type="number" placeholder="1" min="1" max="10" id="guests" onChange={formik.handleChange} value={formik.values.guests}/>
-        <label for="occasion">Occasion</label>
-        <select id="occasion" onChange={formik.handleChange} value={formik.values.occasion}>
+        <input type="number" placeholder="1" min="1" max="10" id="guests" onChange={formik.handleChange} value={formik.values.guests} data-testid="guests"/>
+        <label htmlFor="occasion" >Occasion</label>
+        <select id="occasion" onChange={formik.handleChange} value={formik.values.occasion} data-testid="occasion">
           <option value="birthday">Birthday</option>
           <option value="anniversary">Anniversary</option>
         </select>

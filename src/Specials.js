@@ -35,8 +35,8 @@ const Special = () => {
             <h1>This Week Specials!</h1>
          </div>
         <div id="specials">
-        {specials.map((special) => (
-            <div className="special">
+        {specials.map((special, index) => (
+            <div className="special" key={index}>
             <img src={special.img} alt={special.alt}/>
             <div className="content">
                <div>
