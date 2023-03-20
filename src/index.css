@@ -76,7 +76,7 @@ button{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 8%;
+  gap: 4%;
   z-index: 1;
 }
 #specialsHeader{
@@ -149,6 +149,71 @@ button{
   border: 1px solid #f4ce14;
 }
 
+ /* About page */
+
+ #about{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
+ #about p{
+  width: 60%;
+ }
+ #photos{
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+ }
+
+ #photos img{
+   width: 300px;
+   height: 200px;
+ }
+
+ /* Form */
+ #formContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  }
+
+ form{
+   display: flex;
+   max-width: 400px;
+   width: 100%;
+   gap: 15%;
+   flex-direction: column;
+ }
+
+ form label{
+  margin-top:10px;
+  padding: 10px 0;
+ }
+
+ form input, form select{
+  padding: 10px;
+  margin: 5px;
+  border-radius: 2%;
+ }
+ input[type="submit"]{
+  background-color: #f4ce14;
+  cursor: pointer;
+ }
+
+ /* Footer */
+ #footer{
+  display: flex;
+  margin-top: 10px;
+  color: #495e57;
+  justify-content: center;
+  gap: 15%;
+  background-color: #f4ce14;
+
+ }
 
 @media (max-width: 420px) {
 
@@ -220,4 +285,16 @@ button{
     flex-direction: column;
   }
 
+  /* about page */
+  #about p{
+    width: 100%;
+   }
+  #photos{
+    flex-direction: column;
+   }
+
+  /* Footer */
+  #footer{
+    flex-direction: column;
+  }
 }

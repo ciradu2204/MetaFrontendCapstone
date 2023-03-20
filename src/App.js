@@ -1,18 +1,13 @@
 import './App.css';
-import Header from './Header';
-import Nav from './Nav';
-import Special from './Specials';
-import Testimonials from './Testimonies';
+import Main from './Main';
+
 
 function App() {
   return (
-    <>
-     <Nav/>
-     <Header/>
-     <Special/>
-     <Testimonials/>
-    </>
-  );
+      <>
+       <Main/>
+       </>
+    );
 }
 
 export default App;

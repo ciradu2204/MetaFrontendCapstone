@@ -2,6 +2,7 @@ import logo from "./Img/Logo.svg"
 import {GiHamburgerMenu} from "react-icons/gi"
 import {AiOutlineClose} from "react-icons/ai"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 const Nav = () => {
    const [sidebarOpen, setSidebarOpen] = useState(false);
     const closeSideBar = () => {
@@ -14,23 +15,23 @@ const Nav = () => {
     const links = [
       {
         name:"Home",
-        path: "/home"
+        path: ""
       },
       {
         name:"About",
-        path: "/about"
+        path: "about"
       },
       {
         name: "Specials",
-        path: "/specials"
+        path: "specials"
       },
       {
         name: "Testimonials",
-        path: "/testimonials"
+        path: "testimony"
       },
       {
         name: "Booking",
-        path: "/booking"
+        path: "booking"
       }
     ]
     return (
@@ -39,14 +40,14 @@ const Nav = () => {
           <GiHamburgerMenu id={`hamburgerMenuIcon`} className={`${!sidebarOpen? "active":""}`} onClick={openSideBar}/>
           <ul>
           {links.map((link) => (
-            <li><a href={link.path}>{link.name}</a></li>
+            <li><Link to={link.path}>{link.name}</Link></li>
           ))}
           </ul>
           <div id={`sidebar`} className={`${sidebarOpen? "active":""}`}>
             <AiOutlineClose className={`closeIcon`} onClick={closeSideBar}/>
           <ul>
           {links.map((link) => (
-            <li><a href={link.path}>{link.name}</a></li>
+            <li><Link href={link.path}>{link.name}</Link></li>
           ))}
           </ul>
           </div>
