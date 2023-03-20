@@ -12,26 +12,35 @@ const updateTimes = (state, action) => {
 
 }
 const Main = () => {
+  const [success, setSucess] = useState(false)
+  const [error, setError] = useState(false)
+  const initializeTimes = () => {
+    return fetchAPI(new Date())
+  }
+
+ const [availableTimes, dispatch] = useReducer(updateTimes,initializeTimes)
   const formik = useFormik({
     initialValues: {
       resDate: new Date(),
-      resTime: '',
+      resTime: availableTimes[0],
       guests: 1,
       occasion:"birthday",
     },
+
     onSubmit: values => {
-      // alert(JSON.stringify(values, null, 2));
-      if(submitAPI(values)){
-        setFormSubmitted(true)
+      console.log(values)
+      if( values.resDate !== "" && values.guests > 0 && values.resTime !== ""){
+        if(submitAPI(values)){
+          setSucess(true)
+          setError(false)
+        }
+      }else{
+        setSucess(false)
+        setError(true)
       }
     },
   });
-   const initializeTimes = () => {
-      return fetchAPI(new Date())
-    }
-    const [formSubmited, setFormSubmitted] = useState(false)
 
-   const [availableTimes, dispatch] = useReducer(updateTimes,initializeTimes)
 
    useEffect(() => {
      dispatch({type:formik.values.resDate})
@@ -43,7 +52,7 @@ const Main = () => {
       <Routes>
          <Route path='/' element={<Home/>}/>
          <Route path='/about' element={<About/>}/>
-         <Route path='/booking' element={<BookingForm availableTimes={availableTimes} formSubmited={formSubmited} formik={formik}/>}/>
+         <Route path='/booking' element={<BookingForm availableTimes={availableTimes} success={success} formik={formik} error={error}/>}/>
        </Routes>
        <Footer/>
     </>

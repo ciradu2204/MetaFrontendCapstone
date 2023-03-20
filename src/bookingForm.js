@@ -1,10 +1,12 @@
 
 
-const BookingForm = ({availableTimes, formSubmited, formik}) => {
+const BookingForm = ({availableTimes, success, formik, error}) => {
+  
   return (
     <div id="formContainer">
         <h1>Reserve Your Table</h1>
-        <p className="feedback">{formSubmited? "Successfully Reserved a table": null}</p>
+        <p className="success">{success? "Successfully Reserved a table": null}</p>
+        <p className="error">{error? "There is a missing field": null}</p>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor="resDate">Choose date</label>
         <input type="date" id="resDate" data-testid="date" onChange={formik.handleChange} value={formik.values.resDate}/>
@@ -22,7 +24,7 @@ const BookingForm = ({availableTimes, formSubmited, formik}) => {
           <option value="birthday">Birthday</option>
           <option value="anniversary">Anniversary</option>
         </select>
-        <input type="submit" value="Make Your reservation" disabled={formik.values.resDate === "" || formik.values.resTime === ""}/>
+        <input type="submit" value="Make Your reservation" />
       </form>
     </div>
   );
